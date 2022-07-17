@@ -74,7 +74,7 @@ body {
     height: 100%;
 }
 
-.todo__tasks {
+.body__task {
     display: flex;
     background: white;
     border-radius: 5px;
