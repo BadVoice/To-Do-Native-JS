@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@700&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -36,15 +37,16 @@ body {
 }
 
 .header__input {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
     width: 70%;
     height: 45px;
-    font-family: 'Poppins', sans-serif;
-    font-size: 15px;
     border: 2px solid #d1d3d4;
     border-radius: 5px;
     padding: 12px;
     color: black;
-    font-weight: 500;
     position: relative;
 }
 
@@ -69,27 +71,33 @@ body {
 .todo__body {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 15px;
     width: 100%;
-    height: 100%;
 }
 
 .todo__tasks {
-    display: flex;
-    background: white;
-    border-radius: 5px;
+ 
     width: 100%;
-    height: 60px;
+    display: flex;
+    align-items: center;
+    background: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 5px;
+    min-height: 60px;
     border-radius: 10px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     position: relative;
+    word-wrap: break-word
 }
-/////////
-/
 
+/*редактируем добавление */
 
-
-
-
-
-///////
+.todo__tasks p{
+    padding-left: 10px;
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    width: 100%;
+}
