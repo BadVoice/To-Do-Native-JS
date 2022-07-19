@@ -1,21 +1,34 @@
+const taskAddition = () => {
+    const todoBody = document.querySelector('.todo__body'),
+        todoTask = document.querySelector('.body__task'),
+        headerInput = document.querySelector('.header__input'),
+        headerBtn = document.querySelector('.header__btn');
 
-function myFunction() {
-    const elemText=document.querySelector('.header__input');
+    let getValue
 
-    if (!elemText.value.length || elemText.value.trim()==='') {
-      return;
+    const additionTask = () => {
+        let task = document.createElement('div')
+        task.classList.add('body__task')
+
+        task.innerHTML = `
+          <p>${getValue}</p>
+      `
+
+        todoBody.append(task)
     }
-    else{
-      let getValue=elemText.value.trim();
-      getValue=getValue[0].toUpperCase()+getValue.slice(1);
-      let getTodoBody=document.querySelector('.todo__body');
-      let html = ` 
-    <div class="todo__tasks">
-    <p>${getValue}</p>
-    </div>`;
-    getTodoBody.insertAdjacentHTML("afterend", html);
-    elemText.value = '';
-    }
-    
-  }
- 
+
+    headerBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        getValue = headerInput.value;
+        getValue.trim()
+        if (getValue.trim() !== getValue.length) {
+            additionTask()
+        } else {
+            return false
+        }
+
+    })
+
+
+}
+taskAddition()
