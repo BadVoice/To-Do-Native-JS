@@ -15,13 +15,12 @@
 
 .todo__header {
     display: flex;
-    justify-content: space-between;
-    gap: 50px;
+    gap: 25px;
     position: relative;
     background-color: white;
     padding: 30px 20px;
     border-radius: 5px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 15px 30px rgb(0 0 0 / 30%);
 }
 
 .header__input {
@@ -88,4 +87,10 @@ object>.change-background {
     height: 50px;
     cursor: pointer;
     transition: 0.3s;
+}
+
+.task__descr {
+    text-align: left;
+    padding: 20px;
+    font-size: 18px;
 }
