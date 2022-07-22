@@ -4,13 +4,19 @@
     gap: 20px;
     border: 2px solid white;
     margin: 0 auto;
-    width: 40%;
-    min-width: 450px;
+    width: 800px;
+    
     /* position: absolute;
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%; */
     padding: 30px 40px;
+}
+
+.header__btns__container {
+    display: flex;
+    width: 30%;
+    justify-content: space-around;
 }
 
 .todo__header {
@@ -37,7 +43,7 @@
 }
 
 .header__btn {
-    width: 30%;
+    width: 45%;
     height: 45px;
     border-radius: 5px;
     font-size: 20px;
@@ -101,3 +107,34 @@ object>.change-background {
     width: 50px;
     height: 100%;
 }
+
+@media (max-width: 1000px) { 
+    .wrapper__todo {
+        width: 60%
+    }
+}
+
+@media (max-width: 800px) { 
+    .wrapper__todo {
+        width: 80%
+    }
+}
+
+
+@media (max-width: 870px) { 
+    .todo__header {
+        flex-direction: column;
+    }
+
+    .header__input {
+        width: 100%;
+    }
+
+    .header__btns__container {
+    
+        width: 100%;
+    }
+
+}
+
+
