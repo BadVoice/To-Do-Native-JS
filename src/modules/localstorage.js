@@ -8,7 +8,7 @@ function getUserTasks() {
 }
 
 function additionRenderBodyTask(todoBody, clearTasks, secondData) {
-    todoBody.innerHTML = ''
+    todoBody.innerHTML = '';
     console.log(secondData)
     secondData.forEach(element => {
         let task = document.createElement('div')
