@@ -13,11 +13,12 @@ function additionRenderBodyTask(todoBody, clearTasks, secondData) {
     secondData.forEach(element => {
         let task = document.createElement('div')
         task.classList.add('body__task')
+
         task.innerHTML = `
         <p class = 'task__descr'>${element}</p>
         <button class = 'task__delete'> Delete</button>
     `
-        todoBody.prepend(task)
+        todoBody.append(task)
         clearTasks.addEventListener('click', () => {
             task.remove()
             localStorage.removeItem('user');
@@ -25,8 +26,9 @@ function additionRenderBodyTask(todoBody, clearTasks, secondData) {
         taskDelet = task.querySelector('.task__delete')
         taskDelet.addEventListener('click', () => {
             task.remove()
-            secondData.splice(secondData.indexOf(1), 1)
+            secondData.splice(secondData.indexOf(element), 1)
             localStorage.setItem('user', JSON.stringify(secondData))
+            console.log(secondData)
         })
     });
 
