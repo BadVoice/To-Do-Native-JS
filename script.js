@@ -1,10 +1,10 @@
 const taskAddition = () => {
-    const todoBody = document.querySelector('.todo__body'),
+    const todoBody = document.querySelector('.todo__addition-task'),
         todoTask = document.querySelector('.body__task'),
         headerInput = document.querySelector('.header__input'),
         headerBtn = document.querySelector('.header__btn'),
-        clearTasks = document.getElementById('clear')
-
+        clearTasks = document.getElementById('clear'),
+        changePlaceTask = document.querySelector('.todo__remove-task')
 
     headerBtn.addEventListener('click', (e) => {
         e.preventDefault()
@@ -22,7 +22,8 @@ const taskAddition = () => {
         additionRenderBodyTask(
             todoBody,
             clearTasks,
-            getUserTasks()
+            getUserTasks(),
+            changePlaceTask
         )
     }
 
