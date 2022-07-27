@@ -10,6 +10,10 @@ function getUserTasks() {
     return data ? data : []
 }
 
+function removeUserTasks() {
+    localStorage.removeItem('user');
+}
+
 function additionRenderBodyTask(todoBody, clearTasks, savedTasks, changePlaceTask) {
     todoBody.innerHTML = '';
     console.log(savedTasks)
@@ -28,25 +32,23 @@ function additionRenderBodyTask(todoBody, clearTasks, savedTasks, changePlaceTas
         </div>
     `
 
-
         todoBody.append(task)
-        clearTasks.addEventListener('click', () => {
-            task.remove() // пометка: Вынести в основной сркипт
-            localStorage.removeItem('user');
-        })
-
         taskDelet = task.querySelector('.task__delete')
         taskDelet.addEventListener('click', () => {
             task.remove()
-            savedTasks.splice(index, 1)
-            localStorage.setItem('user', JSON.stringify(savedTasks))
+            removeTask()
         })
+
         changeTaskBtn = task.querySelector('.task__completed')
         changeTaskBtn.addEventListener('click', () => {
-            console.log(savedTasks[1])
-
-
+            console.log(savedTasks[index])
         });
+
+        function removeTask() {
+            savedTasks.splice(index, 1)
+            localStorage.setItem('user', JSON.stringify(savedTasks))
+        }
+
 
     })
 }

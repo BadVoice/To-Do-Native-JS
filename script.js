@@ -26,7 +26,15 @@ const taskAddition = () => {
             changePlaceTask
         )
     }
-
     renderTasks()
+
+    clearTasks.addEventListener('click', () => {
+        removeUserTasks()
+        while (todoBody.firstChild) {
+            todoBody.firstChild.remove()
+        }
+    })
+
+
 }
 taskAddition()
